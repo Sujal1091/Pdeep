@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { X, CheckCircle2, Send, ShieldCheck, Phone } from 'lucide-react';
+import { X, CheckCircle2, Send, ShieldCheck, Phone, AlertTriangle } from 'lucide-react';
+import { sendEnquiryEmail } from '../services/emailService';
 import type { EnquiryFormData } from '../types';
 
 interface EnquiryModalProps {
@@ -27,6 +28,8 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [referenceId, setReferenceId] = useState('');
   const [acknowledgedPolicy, setAcknowledgedPolicy] = useState(true);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   useEffect(() => {
     if (initialCourseId) {
@@ -39,11 +42,22 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setErrorMessage(null);
+
     const randomRef = 'PDEEPS-' + Math.floor(100000 + Math.random() * 900000);
     setReferenceId(randomRef);
-    setIsSubmitted(true);
+
+    const result = await sendEnquiryEmail(formData, randomRef);
+    setIsSubmitting(false);
+
+    if (result.success) {
+      setIsSubmitted(true);
+    } else {
+      setErrorMessage(result.message || 'Failed to submit application enquiry. Please try again.');
+    }
   };
 
   const handleReset = () => {
@@ -243,17 +257,33 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                 </label>
               </div>
 
+              {errorMessage && (
+                <div className="form-error-banner" style={{ marginBottom: '16px' }}>
+                  <AlertTriangle size={18} />
+                  <span>{errorMessage}</span>
+                </div>
+              )}
+
               <div className="modal-footer-actions">
-                <button type="button" onClick={onClose} className="btn btn-outline-dark">
+                <button type="button" onClick={onClose} disabled={isSubmitting} className="btn btn-outline-dark">
                   Cancel
                 </button>
                 <button 
                   type="submit" 
-                  disabled={!acknowledgedPolicy}
+                  disabled={!acknowledgedPolicy || isSubmitting}
                   className="btn btn-accent modal-submit-btn"
                 >
-                  <Send size={16} />
-                  <span>Submit Application Enquiry</span>
+                  {isSubmitting ? (
+                    <>
+                      <span className="spinner-sm"></span>
+                      <span>Submitting...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send size={16} />
+                      <span>Submit Application Enquiry</span>
+                    </>
+                  )}
                 </button>
               </div>
 

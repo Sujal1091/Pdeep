@@ -7,9 +7,12 @@ import {
   Send, 
   Clock,
   Phone,
-  
+  UserCheck,
+  LifeBuoy,
+  AlertTriangle
 } from 'lucide-react';
 import { COMPANY_INFO } from '../data/content';
+import { sendEnquiryEmail } from '../services/emailService';
 import type { EnquiryFormData } from '../types';
 
 export function ContactPage() {
@@ -27,12 +30,25 @@ export function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [referenceId, setReferenceId] = useState('');
   const [acknowledgedPolicy, setAcknowledgedPolicy] = useState(true);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setErrorMessage(null);
+
     const ref = 'PDEEPS-' + Math.floor(100000 + Math.random() * 900000);
     setReferenceId(ref);
-    setIsSubmitted(true);
+
+    const result = await sendEnquiryEmail(formData, ref);
+    setIsSubmitting(false);
+
+    if (result.success) {
+      setIsSubmitted(true);
+    } else {
+      setErrorMessage(result.message || 'Failed to submit form. Please try again.');
+    }
   };
 
   return (
@@ -70,6 +86,7 @@ export function ContactPage() {
                 </p>
 
                 <div className="contact-methods-stack">
+                  {/* Phone Call */}
                   <div className="contact-method-item">
                     <div className="c-icon-circle phone-call-accent">
                       <Phone size={18} />
@@ -78,32 +95,62 @@ export function ContactPage() {
                       <span className="c-label">Admissions Hotline (Call)</span>
                       <a href="tel:+918284081752" className="contact-phone-direct">
                         <strong>Call: 8284081752</strong>
-                        <span className="sub-phone-tag">(+91 82840 81752)</span>
                       </a>
                     </div>
                   </div>
 
+                  {/* HR Email */}
+                  <div className="contact-method-item">
+                    <div className="c-icon-circle hr-accent">
+                      <UserCheck size={18} />
+                    </div>
+                    <div>
+                      <span className="c-label">HR & Recruitment Desk</span>
+                      <a href="mailto:hr@pdib.in" className="contact-email-link">
+                        <strong>hr@pdib.in</strong>
+                      </a>
+                    </div>
+                  </div>
 
+                  {/* Support Email */}
+                  <div className="contact-method-item">
+                    <div className="c-icon-circle support-accent">
+                      <LifeBuoy size={18} />
+                    </div>
+                    <div>
+                      <span className="c-label">Student & Candidate Support</span>
+                      <a href="mailto:support@pdib.in" className="contact-email-link">
+                        <strong>support@pdib.in</strong>
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Complaints / Grievance Email */}
+                  <div className="contact-method-item">
+                    <div className="c-icon-circle complaint-accent">
+                      <AlertTriangle size={18} />
+                    </div>
+                    <div>
+                      <span className="c-label">Grievance & Complaints Cell</span>
+                      <a href="mailto:complaints@pdib.in" className="contact-email-link">
+                        <strong>complaints@pdib.in</strong>
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Official Authorized Domain */}
                   <div className="contact-method-item">
                     <div className="c-icon-circle">
-                      <Mail size={18} />
+                      <ShieldCheck size={18} />
                     </div>
                     <div>
                       <span className="c-label">Official Authorized Domain</span>
                       <strong>@pdib.in</strong>
+                      <span className="contact-sub-note">All authentic institute emails end strictly with @pdib.in</span>
                     </div>
                   </div>
 
-                  <div className="contact-method-item">
-                    <div className="c-icon-circle">
-                      <Mail size={18} />
-                    </div>
-                    <div>
-                      <span className="c-label">Admissions & Inquiries</span>
-                      <a href="mailto:contact@pdib.in">contact@pdib.in</a>
-                    </div>
-                  </div>
-
+                  {/* Inquiry Response Hours */}
                   <div className="contact-method-item">
                     <div className="c-icon-circle">
                       <Clock size={18} />
@@ -305,13 +352,29 @@ export function ContactPage() {
                       </label>
                     </div>
 
+                    {errorMessage && (
+                      <div className="form-error-banner">
+                        <AlertTriangle size={18} />
+                        <span>{errorMessage}</span>
+                      </div>
+                    )}
+
                     <button 
                       type="submit" 
-                      disabled={!acknowledgedPolicy}
+                      disabled={!acknowledgedPolicy || isSubmitting}
                       className="btn btn-accent btn-lg full-width-btn"
                     >
-                      <Send size={18} />
-                      <span>Submit Application Now</span>
+                      {isSubmitting ? (
+                        <>
+                          <span className="spinner-sm"></span>
+                          <span>Submitting Application...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Send size={18} />
+                          <span>Submit Application Now</span>
+                        </>
+                      )}
                     </button>
                   </form>
                 )}

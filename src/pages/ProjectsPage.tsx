@@ -9,7 +9,8 @@ import {
   ArrowRight, 
   ExternalLink,
   ShieldAlert,
-  Briefcase
+  Briefcase,
+  IndianRupee
 } from 'lucide-react';
 import { COURSES_DATA } from '../data/content';
 import type { ProjectCourse } from '../types';
@@ -76,6 +77,12 @@ export function ProjectsPage({ onSelectProject, onOpenEnquiry }: ProjectsPagePro
                 <div className="card-top-header">
                   <div className="header-badges">
                     <span className="badge-num">{proj.projectNumber}</span>
+                    {proj.price && (
+                      <span className="badge-price">
+                        <IndianRupee size={13} />
+                        {proj.price}
+                      </span>
+                    )}
                     <span className="badge-highlight">{proj.badge}</span>
                   </div>
                   <h2>{proj.title}</h2>
@@ -84,6 +91,16 @@ export function ProjectsPage({ onSelectProject, onOpenEnquiry }: ProjectsPagePro
 
                 {/* Specs Bar */}
                 <div className="specs-bar-full">
+                  {proj.price && (
+                    <div className="spec-col spec-col-price">
+                      <IndianRupee size={18} className="spec-ico price-spec-icon" />
+                      <div>
+                        <span className="spec-heading">Project Price</span>
+                        <strong className="price-spec-val">{proj.price}</strong>
+                      </div>
+                    </div>
+                  )}
+
                   <div className="spec-col">
                     <Clock size={18} className="spec-ico" />
                     <div>

@@ -6,10 +6,9 @@ import {
   LineChart, 
   CheckCircle2, 
   ShoppingBag, 
-  ArrowRight,
-  Check
+  ArrowRight
 } from 'lucide-react';
-import { WHAT_WE_DO, MARKETPLACE_PARTNERS } from '../data/content';
+import { WHAT_WE_DO } from '../data/content';
 
 interface ServicesPageProps {
   onOpenEnquiry: () => void;
@@ -96,33 +95,7 @@ export function ServicesPage({ onOpenEnquiry }: ServicesPageProps) {
             ))}
           </div>
 
-          {/* Marketplace Ecosystem Showcase */}
-          <div className="services-marketplaces-block">
-            <div className="section-header">
-              <span className="pill-badge pill-badge-green">Platform Exposure</span>
-              <h2>Marketplaces Covered in Our Operations</h2>
-              <p>
-                Candidates and clients gain expertise across the dominant e-commerce and quick-commerce channels in India.
-              </p>
-            </div>
 
-            <div className="marketplaces-detailed-grid">
-              {MARKETPLACE_PARTNERS.map((partner) => (
-                <div key={partner.name} className="marketplace-card-lg">
-                  <div className="m-card-header">
-                    <span className="m-card-bullet" style={{ backgroundColor: partner.color }}></span>
-                    <h4>{partner.name}</h4>
-                  </div>
-                  <span className="m-card-tag">{partner.tag}</span>
-                  <ul className="m-card-points">
-                    <li><Check size={14} /> Single & Bulk Product Listings</li>
-                    <li><Check size={14} /> Variation Matrix & Size Guides</li>
-                    <li><Check size={14} /> Policy Compliance & Quality Score</li>
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
 
           {/* Bottom Action */}
           <div className="subpage-action-banner">

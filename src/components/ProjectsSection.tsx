@@ -6,7 +6,8 @@ import {
   Users, 
   ArrowRight, 
   CheckCircle2, 
-  ExternalLink
+  ExternalLink,
+  IndianRupee
 } from 'lucide-react';
 import { COURSES_DATA } from '../data/content';
 import type { ProjectCourse } from '../types';
@@ -65,6 +66,12 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
               <div className="project-card-top">
                 <div className="project-meta-badges">
                   <span className="project-num-tag">{project.projectNumber}</span>
+                  {project.price && (
+                    <span className="project-price-tag">
+                      <IndianRupee size={13} />
+                      {project.price}
+                    </span>
+                  )}
                   <span className="project-feature-tag">{project.badge}</span>
                 </div>
                 <h3 className="project-card-title">{project.title}</h3>
@@ -73,6 +80,16 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 
               {/* Quick Specs Matrix */}
               <div className="project-specs-grid">
+                {project.price && (
+                  <div className="spec-item spec-item-price">
+                    <IndianRupee size={16} className="spec-icon price-spec-icon" />
+                    <div>
+                      <span className="spec-label">Project Price</span>
+                      <strong className="spec-val price-spec-val">{project.price}</strong>
+                    </div>
+                  </div>
+                )}
+
                 <div className="spec-item">
                   <Clock size={16} className="spec-icon" />
                   <div>

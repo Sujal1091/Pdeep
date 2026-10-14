@@ -9,6 +9,7 @@ export interface ProjectCourse {
   engagement: string;
   schedule: string;
   ageEligibility: string;
+  price: string;
   coverage?: string;
   internship?: string;
   modules?: string;

@@ -25,7 +25,7 @@ export const WHAT_WE_DO = [
     id: "training",
     number: "01",
     title: "E-Commerce Training & Skill Development",
-    description: "We provide practical training in e-commerce operations, helping candidates understand how online marketplaces such as Amazon, Flipkart, Myntra, and others operate. Training focuses on product listing, catalog management, product data entry, marketplace workflows, and essential digital business skills.",
+    description: "We provide practical training in e-commerce operations, helping candidates understand how online marketplaces and digital retail channels operate. Training focuses on product listing, catalog management, product data entry, marketplace workflows, and essential digital business skills.",
     points: [
       "Catalog creation & SKU structuring",
       "Product title, description & attribute optimization",
@@ -66,16 +66,6 @@ export const WHAT_WE_DO = [
     ]
   }
 ];
-export const MARKETPLACE_PARTNERS = [
-  { name: "Amazon", tag: "Global Marketplace", color: "#FF9900" },
-  { name: "Flipkart", tag: "India Leader", color: "#2874F0" },
-  { name: "Myntra", tag: "Fashion & Lifestyle", color: "#E11B55" },
-  { name: "Meesho", tag: "Social Commerce", color: "#F43397" },
-  { name: "AJIO", tag: "Premium Fashion", color: "#2C4152" },
-  { name: "Blinkit", tag: "Quick Commerce", color: "#F8CB46" },
-  { name: "Zepto", tag: "10-Min Delivery", color: "#800080" }
-];
-
 export const COURSES_DATA: ProjectCourse[] = [
   {
     id: "project-01",
@@ -88,7 +78,7 @@ export const COURSES_DATA: ProjectCourse[] = [
     engagement: "Up to 3 Years Project Duration",
     schedule: "Flexible Hours (Part-time / Full-time)",
     ageEligibility: "Up to 60 Years",
-    marketplaces: ["Amazon", "Flipkart", "Myntra", "Meesho", "AJIO", "Blinkit", "Zepto"],
+    price: "Upto 55k",
     whoCanApply: [
       "College Students & Fresh Graduates",
       "Homemakers and Housewives looking for independent income",
@@ -127,6 +117,7 @@ export const COURSES_DATA: ProjectCourse[] = [
     engagement: "Structured Project Engagements",
     schedule: "Full-Time & Part-Time Shifts",
     ageEligibility: "18 to 48 Years",
+    price: "Upto 70k",
     coverage: "India & USA Client Projects",
     whoCanApply: [
       "Individuals with basic written English capabilities",
@@ -167,6 +158,7 @@ export const COURSES_DATA: ProjectCourse[] = [
     engagement: "Up to 6 Months Internship (Subject to Eligibility)",
     schedule: "Daily 60-Minute Interactive Classes",
     ageEligibility: "Students, Freshers & Working Professionals",
+    price: "Upto 90k",
     modules: "50+ Modules Across Digital Marketing & AI",
     classes: "60-Minute Daily Sessions",
     whoCanApply: [
@@ -289,8 +281,8 @@ export const FAQ_DATA: FAQItem[] = [
   {
     id: "pl-2",
     category: "product-listing",
-    question: "Which marketplaces are covered in Project 01?",
-    answer: "Training and project exposure include major marketplaces such as Amazon, Flipkart, Myntra, Meesho, AJIO, Blinkit, and Zepto, depending on the program batch and available business projects."
+    question: "Which marketplace platforms are covered in Project 01?",
+    answer: "Training and project exposure include major e-commerce platforms, quick-commerce networks, and specialized retail channels, depending on the program batch and available business projects."
   },
   {
     id: "pl-3",

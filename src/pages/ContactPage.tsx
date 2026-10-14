@@ -313,13 +313,13 @@ export function ContactPage() {
                         className="form-select project-dropdown"
                       >
                         <option value="project-01">
-                          Project 01: E-Commerce Product Listing Project (15 Days Training • Up to 3 Yrs Engagement)
+                          Project 01: E-Commerce Product Listing Project (Price: Upto 55k • 15 Days Training)
                         </option>
                         <option value="project-02">
-                          Project 02: Customer Email Support & Query Management (60 Days Training • India & USA)
+                          Project 02: Customer Email Support & Query Management (Price: Upto 70k • 60 Days Training • India & USA)
                         </option>
                         <option value="project-03">
-                          Project 03: ADMC - Advanced Digital Marketing & AI Certification (4 Months + Internship)
+                          Project 03: ADMC - Advanced Digital Marketing & AI Certification (Price: Upto 90k • 4 Months + Internship)
                         </option>
                         <option value="general-inquiry">
                           General Inquiry / Business Catalog Management Services

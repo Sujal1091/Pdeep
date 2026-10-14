@@ -116,7 +116,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry, onOpenVerify }) => {
             <div className="metric-box">
               <div className="metric-number">7+</div>
               <div className="metric-unit">Marketplaces</div>
-              <div className="metric-desc">Amazon, Flipkart, Myntra, Meesho, Blinkit & more</div>
+              <div className="metric-desc">Major e-commerce & quick-commerce channels</div>
             </div>
 
             <div className="metric-box">

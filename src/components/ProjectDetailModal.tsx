@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, CheckCircle2, Clock, Calendar, Award, Users, ShieldAlert, ArrowRight } from 'lucide-react';
+import { X, CheckCircle2, Clock, Calendar, Award, Users, ShieldAlert, ArrowRight, IndianRupee } from 'lucide-react';
 import type { ProjectCourse } from '../types';
 
 interface ProjectDetailModalProps {
@@ -23,6 +23,12 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
           <div>
             <div className="modal-badge-row">
               <span className="project-num-tag">{project.projectNumber}</span>
+              {project.price && (
+                <span className="modal-badge-price">
+                  <IndianRupee size={13} />
+                  {project.price}
+                </span>
+              )}
               <span className="modal-subtitle-tag">{project.badge}</span>
             </div>
             <h3 className="modal-title">{project.title}</h3>
@@ -38,6 +44,12 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
 
           {/* Key Specifications Grid */}
           <div className="modal-specs-row">
+            {project.price && (
+              <div className="modal-spec-cell modal-spec-price">
+                <IndianRupee size={16} />
+                <span>Price: <strong>{project.price}</strong></span>
+              </div>
+            )}
             <div className="modal-spec-cell">
               <Clock size={16} />
               <span>Training: <strong>{project.duration}</strong></span>

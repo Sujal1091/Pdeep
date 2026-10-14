@@ -24,7 +24,7 @@ export const AboutSection: React.FC = () => {
               {COMPANY_INFO.aboutSummary}
             </p>
             <p className="about-text-sub">
-              We specialize in practical e-commerce training, product catalog management, customer email workflows, and industry-oriented certifications. Instead of rote learning, our candidates practice on live marketplace environments like Amazon, Flipkart, Myntra, and quick commerce apps.
+              We specialize in practical e-commerce training, product catalog management, customer email workflows, and industry-oriented certifications. Instead of rote learning, our candidates practice on live e-commerce environments and leading digital marketplace workflows.
             </p>
 
             <div className="about-pillars-bar">

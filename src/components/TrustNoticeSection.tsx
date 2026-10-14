@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { 
-  ShieldCheck, 
-  AlertTriangle, 
-  CheckCircle2, 
-  Lock, 
-  HelpCircle, 
+import {
+  ShieldCheck,
+  AlertTriangle,
+  CheckCircle2,
+  Lock,
+  HelpCircle,
   Mail
 } from 'lucide-react';
 import { POLICIES_NOTICE } from '../data/content';
@@ -62,10 +62,10 @@ export const TrustNoticeSection: React.FC = () => {
             {POLICIES_NOTICE.points.map((pt, idx) => (
               <div key={idx} className="policy-block-card">
                 <div className="policy-card-icon">
-                  {idx === 0 ? <Mail size={22} /> : 
-                   idx === 1 ? <ShieldCheck size={22} /> : 
-                   idx === 4 ? <AlertTriangle size={22} /> : 
-                   <CheckCircle2 size={22} />}
+                  {idx === 0 ? <Mail size={22} /> :
+                    idx === 1 ? <ShieldCheck size={22} /> :
+                      idx === 4 ? <AlertTriangle size={22} /> :
+                        <CheckCircle2 size={22} />}
                 </div>
                 <div className="policy-card-body">
                   <h4 className="policy-item-title">{pt.title}</h4>
@@ -91,11 +91,11 @@ export const TrustNoticeSection: React.FC = () => {
               <form onSubmit={handleVerify} className="verifier-form">
                 <div className="form-input-wrap">
                   <Mail className="input-icon" size={18} />
-                  <input 
+                  <input
                     type="email"
                     value={testEmail}
                     onChange={(e) => setTestEmail(e.target.value)}
-                    placeholder="e.g. hr@pdib.in or contact@pdib.in"
+                    placeholder="e.g. hr@pdib.in or hr@pdib.in"
                     className="verifier-input"
                     required
                   />
@@ -139,7 +139,7 @@ export const TrustNoticeSection: React.FC = () => {
 
               <div className="verifier-support-note">
                 <HelpCircle size={15} />
-                <span>Still have doubts? Email our compliance team directly at <strong>contact@pdib.in</strong></span>
+                <span>Still have doubts? Email our compliance team directly at <strong>hr@pdib.in</strong></span>
               </div>
             </div>
           </div>

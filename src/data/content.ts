@@ -5,7 +5,7 @@ export const COMPANY_INFO = {
   shortName: "PDEEPS Institute",
   tagline: "Empowering Digital Entrepreneurs",
   officialDomain: "@pdib.in",
-  officialEmail: "contact@pdib.in",
+  officialEmail: "hr@pdib.in",
   hrEmail: "hr@pdib.in",
   supportEmail: "support@pdib.in",
   complaintsEmail: "complaints@pdib.in",
@@ -78,7 +78,7 @@ export const COURSES_DATA: ProjectCourse[] = [
     engagement: "Up to 3 Years Project Duration",
     schedule: "Flexible Hours (Part-time / Full-time)",
     ageEligibility: "Up to 60 Years",
-    price: "Upto 55k",
+    earnings: "Upto 55k",
     whoCanApply: [
       "College Students & Fresh Graduates",
       "Homemakers and Housewives looking for independent income",
@@ -117,7 +117,7 @@ export const COURSES_DATA: ProjectCourse[] = [
     engagement: "Structured Project Engagements",
     schedule: "Full-Time & Part-Time Shifts",
     ageEligibility: "18 to 48 Years",
-    price: "Upto 70k",
+    earnings: "Upto 70k",
     coverage: "India & USA Client Projects",
     whoCanApply: [
       "Individuals with basic written English capabilities",
@@ -158,7 +158,7 @@ export const COURSES_DATA: ProjectCourse[] = [
     engagement: "Up to 6 Months Internship (Subject to Eligibility)",
     schedule: "Daily 60-Minute Interactive Classes",
     ageEligibility: "Students, Freshers & Working Professionals",
-    price: "Upto 90k",
+    earnings: "Upto 90k",
     modules: "50+ Modules Across Digital Marketing & AI",
     classes: "60-Minute Daily Sessions",
     whoCanApply: [

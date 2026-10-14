@@ -101,7 +101,7 @@ export function TermsPage() {
               <ul>
                 <li>All official letters, onboarding documents, training links, and payment instructions are sent exclusively via our authorized domain: <strong>@pdib.in</strong>.</li>
                 <li>Candidates must verify the sender's email address before responding or remitting any training fee. Emails received from personal Gmail accounts or unauthorized domains should not be considered official institute communication.</li>
-                <li>Always confirm payment details with authorized staff at <code>contact@pdib.in</code> prior to initiating any transaction.</li>
+                <li>Always confirm payment details with authorized staff at <code>hr@pdib.in</code> prior to initiating any transaction.</li>
               </ul>
             </div>
 
@@ -127,7 +127,7 @@ export function TermsPage() {
               <div className="legal-contact-callout">
                 <Mail size={18} />
                 <span>
-                  Official Legal & Compliance Desk: <a href="mailto:contact@pdib.in">contact@pdib.in</a> (Domain: <strong>@pdib.in</strong>)
+                  Official Legal & Compliance Desk: <a href="mailto:hr@pdib.in">hr@pdib.in</a> (Domain: <strong>@pdib.in</strong>)
                 </span>
               </div>
             </div>

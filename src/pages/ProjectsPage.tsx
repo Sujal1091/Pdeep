@@ -77,10 +77,10 @@ export function ProjectsPage({ onSelectProject, onOpenEnquiry }: ProjectsPagePro
                 <div className="card-top-header">
                   <div className="header-badges">
                     <span className="badge-num">{proj.projectNumber}</span>
-                    {proj.price && (
+                    {proj.earnings && (
                       <span className="badge-price">
                         <IndianRupee size={13} />
-                        {proj.price}
+                        Earnings {proj.earnings}
                       </span>
                     )}
                     <span className="badge-highlight">{proj.badge}</span>
@@ -91,12 +91,12 @@ export function ProjectsPage({ onSelectProject, onOpenEnquiry }: ProjectsPagePro
 
                 {/* Specs Bar */}
                 <div className="specs-bar-full">
-                  {proj.price && (
+                  {proj.earnings && (
                     <div className="spec-col spec-col-price">
                       <IndianRupee size={18} className="spec-ico price-spec-icon" />
                       <div>
-                        <span className="spec-heading">Project Price</span>
-                        <strong className="price-spec-val">{proj.price}</strong>
+                        <span className="spec-heading">Student Earnings</span>
+                        <strong className="price-spec-val">{proj.earnings}</strong>
                       </div>
                     </div>
                   )}

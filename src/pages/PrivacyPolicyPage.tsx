@@ -126,7 +126,7 @@ export function PrivacyPolicyPage() {
               <div className="legal-contact-callout">
                 <Mail size={18} />
                 <span>
-                  Authorized Privacy Desk: <a href="mailto:contact@pdib.in">contact@pdib.in</a> (Domain: <strong>@pdib.in</strong>)
+                  Authorized Privacy Desk: <a href="mailto:hr@pdib.in">hr@pdib.in</a> (Domain: <strong>@pdib.in</strong>)
                 </span>
               </div>
             </div>

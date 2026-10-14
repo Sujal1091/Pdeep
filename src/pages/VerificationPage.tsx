@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  ShieldCheck, 
-  AlertTriangle, 
-  Mail, 
-  HelpCircle, 
-  CheckCircle2, 
+import {
+  ShieldCheck,
+  AlertTriangle,
+  Mail,
+  HelpCircle,
+  CheckCircle2,
   ArrowRight,
   ShieldAlert,
   FileText
@@ -107,11 +107,11 @@ export function VerificationPage({ onOpenEnquiry }: VerificationPageProps) {
                 <form onSubmit={handleCheck} className="verifier-form">
                   <div className="form-input-wrap">
                     <Mail className="input-icon" size={18} />
-                    <input 
+                    <input
                       type="email"
                       value={inputEmail}
                       onChange={(e) => setInputEmail(e.target.value)}
-                      placeholder="e.g. hr@pdib.in or contact@pdib.in"
+                      placeholder="e.g. hr@pdib.in or hr@pdib.in"
                       className="verifier-input"
                       required
                     />
@@ -154,7 +154,7 @@ export function VerificationPage({ onOpenEnquiry }: VerificationPageProps) {
                 <div className="verifier-support-note">
                   <HelpCircle size={15} />
                   <span>
-                    Report suspicious communications directly to our compliance desk: <strong>contact@pdib.in</strong>
+                    Report suspicious communications directly to our compliance desk: <strong>hr@pdib.in</strong>
                   </span>
                 </div>
               </div>

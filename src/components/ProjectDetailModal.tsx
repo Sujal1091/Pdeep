@@ -23,10 +23,10 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
           <div>
             <div className="modal-badge-row">
               <span className="project-num-tag">{project.projectNumber}</span>
-              {project.price && (
+              {project.earnings && (
                 <span className="modal-badge-price">
                   <IndianRupee size={13} />
-                  {project.price}
+                  Earnings {project.earnings}
                 </span>
               )}
               <span className="modal-subtitle-tag">{project.badge}</span>
@@ -44,10 +44,10 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
 
           {/* Key Specifications Grid */}
           <div className="modal-specs-row">
-            {project.price && (
+            {project.earnings && (
               <div className="modal-spec-cell modal-spec-price">
                 <IndianRupee size={16} />
-                <span>Price: <strong>{project.price}</strong></span>
+                <span>Student Earnings: <strong>{project.earnings}</strong></span>
               </div>
             )}
             <div className="modal-spec-cell">

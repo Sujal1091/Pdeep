@@ -3,10 +3,9 @@ import {
   ArrowRight, 
   CheckCircle2, 
   Sparkles, 
-  ShieldCheck, 
-  ShoppingBag
+  ShieldCheck,
 } from 'lucide-react';
-import { COMPANY_INFO, MARKETPLACE_PARTNERS } from '../data/content';
+import { COMPANY_INFO } from '../data/content';
 
 interface HeroProps {
   onOpenEnquiry: (courseId?: string) => void;
@@ -145,23 +144,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry, onOpenVerify }) => {
       </div>
 
       {/* Marketplaces Ticker Section */}
-      <div className="hero-marketplace-bar">
-        <div className="container marketplace-inner">
-          <span className="marketplace-caption">
-            <ShoppingBag size={16} />
-            Marketplace Exposure & Operational Ecosystem:
-          </span>
-          <div className="marketplace-chips">
-            {MARKETPLACE_PARTNERS.map((partner) => (
-              <div key={partner.name} className="partner-chip">
-                <span className="chip-bullet" style={{ backgroundColor: partner.color }}></span>
-                <span className="chip-name">{partner.name}</span>
-                <span className="chip-tag">{partner.tag}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+
     </section>
   );
 };

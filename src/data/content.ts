@@ -64,7 +64,6 @@ export const WHAT_WE_DO = [
     ]
   }
 ];
-
 export const MARKETPLACE_PARTNERS = [
   { name: "Amazon", tag: "Global Marketplace", color: "#FF9900" },
   { name: "Flipkart", tag: "India Leader", color: "#2874F0" },

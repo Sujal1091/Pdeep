@@ -110,7 +110,7 @@ export function ContactPage() {
                     </div>
                     <div>
                       <span className="c-label">Inquiry Response Hours</span>
-                      <strong>Monday – Saturday (10:00 AM – 6:30 PM IST)</strong>
+                      <strong>Monday – Friday (10:00 AM – 5:00 PM IST)</strong>
                     </div>
                   </div>
                 </div>

@@ -24,6 +24,7 @@ interface NavbarProps {
 export function Navbar({ onOpenEnquiry, onOpenVerify }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [logoError, setLogoError] = useState(false);
   
   // Dropdown states for desktop & mobile
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -110,15 +111,16 @@ export function Navbar({ onOpenEnquiry, onOpenVerify }: NavbarProps) {
         {/* Brand Logo */}
         <Link to="/" className="nav-brand">
           <div className="nav-logo-box">
-            <img 
-              src="/logo.jpeg" 
-              alt="PDEEPS Logo" 
-              className="nav-logo-img" 
-              onError={(e) => {
-                (e.target as HTMLElement).style.display = 'none';
-              }}
-            />
-            <span className="logo-fallback-badge">P</span>
+            {!logoError ? (
+              <img 
+                src="/logo.jpeg" 
+                alt="PDEEPS Logo" 
+                className="nav-logo-img" 
+                onError={() => setLogoError(true)}
+              />
+            ) : (
+              <span className="logo-fallback-badge">P</span>
+            )}
           </div>
           <div className="nav-brand-text">
             <span className="brand-title">PDEEPS INSTITUTE</span>
@@ -420,21 +422,6 @@ export function Navbar({ onOpenEnquiry, onOpenVerify }: NavbarProps) {
             </div>
 
             <div className="mobile-drawer-footer">
-              <a 
-                href="tel:+918284081752"
-                className="btn btn-outline-light mobile-drawer-btn"
-              >
-                <Phone size={18} />
-                <span>Call Admissions: 8284081752</span>
-              </a>
-              <Link 
-                to="/policy" 
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="btn btn-outline-light mobile-drawer-btn"
-              >
-                <ShieldCheck size={18} />
-                <span>Verify Official Email</span>
-              </Link>
               <button 
                 onClick={() => {
                   setIsMobileMenuOpen(false);
@@ -445,6 +432,23 @@ export function Navbar({ onOpenEnquiry, onOpenVerify }: NavbarProps) {
                 <span>Enquire Now / Apply</span>
                 <ArrowRight size={18} />
               </button>
+
+              <a 
+                href="tel:+918284081752"
+                className="btn btn-outline-light mobile-drawer-btn"
+              >
+                <Phone size={18} />
+                <span>Call Admissions: 8284081752</span>
+              </a>
+
+              <Link 
+                to="/policy" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="btn btn-outline-light mobile-drawer-btn"
+              >
+                <ShieldCheck size={18} />
+                <span>Verify Official Email</span>
+              </Link>
             </div>
           </div>
         </div>

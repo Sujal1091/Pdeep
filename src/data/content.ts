@@ -209,7 +209,7 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
   },
   {
     id: "test-2",
-    name: "Rahul Verma",
+    name: "Anita Rani",
     role: "Marketplace Specialist",
     projectTag: "Marketplace Listing Project",
     image: "/Testomonial_2.jpeg",
@@ -229,7 +229,7 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
   },
   {
     id: "test-4",
-    name: "Anil Kumar",
+    name: "Pooja Kumari",
     role: "ADMC Trainee",
     projectTag: "Practical Learning Experience",
     image: "/Testomonial_4.jpeg",
